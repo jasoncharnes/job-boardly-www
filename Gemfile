@@ -68,3 +68,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# A modern Ruby on Rails CMS with Hotwire [https://github.com/SpinaCMS/Spina]
+gem "spina", "~> 2.17"
