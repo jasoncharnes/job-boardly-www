@@ -17,7 +17,7 @@ features = Spina::Resource.find_or_create_by!(
   name: "features",
   label: "Features",
   view_template: "feature",
-  slug: {en: "features"}
+  slug: "features"
 )
 
 features.pages.destroy_all
@@ -28,7 +28,7 @@ seeds["features"].each do |feature|
   features.pages.create!(
     title: feature["title"],
     view_template: "feature",
-    en_content: feature["en_content"].map do |part|
+    content: feature["en_content"].map do |part|
       part[0].constantize.new(**part[1])
     end
   )
