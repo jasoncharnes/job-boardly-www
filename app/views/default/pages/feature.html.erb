@@ -1,0 +1,22 @@
+<div class="bg-white py-16">
+  <div class="mx-auto max-w-5xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+      <p class="text-base font-semibold leading-7 text-blue-600">Features</p>
+      <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"><%= current_page.title %></h1>
+      <div class="prose mt-10 max-w-xl lg:max-w-none">
+        <%= content.html :content %>
+      </div>
+      <div class="mt-10 flex">
+        <%= link_to current_account.content(:cta_button), registration_path, class: "rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" %>
+      </div>
+    </div>
+  </div>
+  <div class="relative overflow-hidden pt-16 lg:pt-20">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <%= content.image_tag :screenshot, {}, class: "mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10", alt: current_page.title %>
+      <div class="relative" aria-hidden="true">
+        <div class="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-white pt-[7%]"></div>
+      </div>
+    </div>
+  </div>
+</div>

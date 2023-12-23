@@ -41,6 +41,7 @@ Spina::Theme.register do |theme|
     {name: "cta_heading", title: "CTA heading", part_type: "Spina::Parts::Line"},
     {name: "cta_subheading", title: "CTA subheading", part_type: "Spina::Parts::MultiLine"},
     {name: "cta_button", title: "CTA button", part_type: "Spina::Parts::Line"},
+    {name: "screenshot", title: "Screenshot", part_type: "Spina::Parts::Image"},
     # Pricing-related fields
     {name: "monthly_price", title: "Monthly price", part_type: "Spina::Parts::Line"},
     {name: "yearly_price", title: "Yearly price", part_type: "Spina::Parts::Line"},
@@ -62,7 +63,7 @@ Spina::Theme.register do |theme|
        testimonials_heading testimonials_subheading pricing_heading pricing_subheading
        cta_heading cta_subheading]},
     {name: "show", title: "Page", parts: %w[content]},
-    {name: "feature", title: "Feature", parts: %w[icon summary content]}
+    {name: "feature", title: "Feature", parts: %w[icon summary screenshot content]}
   ]
 
   # Custom pages
