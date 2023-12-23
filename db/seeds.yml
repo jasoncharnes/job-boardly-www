@@ -1,0 +1,156 @@
+features:
+  - title: Job posts
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: briefcase
+      Spina::Parts::MultiLine:
+        name: summary
+        content: Take full control of your job posts with Job Boardly. Easily add, edit, and price job posts using our intuitive job board software.
+  - title: Turbo backfiller
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: lightning-bolt
+      Spina::Parts::MultiLine:
+        name: summary
+        content: Unlock the full potential of your job board with our Turbo Backfiller. Set it once and watch your job posts grow without lifting a finger.
+  - title: Magic aggregator
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: sparkles
+      Spina::Parts::MultiLine:
+        name: summary
+        content: Elevate your job board with our Magic Aggregator. Automatically import jobs from various career sites using our tailored import tool.
+  - title: Job alerts
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: bell-alert
+      Spina::Parts::MultiLine:
+        name: summary
+        content: Build a loyal following of job seekers. Collect email addresses and automatically send a weekly summary of job postings.
+  - title: SEO tools
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: magnifying-glass
+      Spina::Parts::MultiLine:
+        name: summary
+        content: Boost your job board's search engine rankings. Our platform includes automatic integration with Google Jobs and built-in SEO features.
+  - title: Custom pages
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: document-text
+      Spina::Parts::MultiLine:
+        name: summary
+        content: Create pages that enhance your brand and improve SEO. Publish content, provide resources, or start a blog - possibilities are endless!
+  - title: Mobile friendly
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: device-phone-mobile
+      Spina::Parts::MultiLine:
+        name: summary
+        content: Job seekers can easily browse and apply to jobs on their mobile devices. Your job board will look great on any screen size.
+  - title: Design options
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: swatch
+      Spina::Parts::MultiLine:
+        name: summary
+        content: With customizations for colors, logos, and branding, you can create a unique look that stands out to job seekers and employers alike.
+  - title: Stripe integration
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: credit-card
+      Spina::Parts::MultiLine:
+        name: summary
+        content: Collect payment from companies directly. With a seamless integration with Stripe, you're in control and your transactions are secure.
+  - title: Coupon codes
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: tag
+      Spina::Parts::MultiLine:
+        name: summary
+        content: Attract more customers by offering coupons. Easily create and manage job post discounts, increasing revenue for your job board.
+  - title: No code
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: code
+      Spina::Parts::MultiLine:
+        name: summary
+        content: Don't spend your time learning to code or searching for a developer. Launch your job board and focus on growing your business.
+  - title: Custom domains
+    en_content:
+      Spina::Parts::Option:
+        name: icon
+        value: globe
+      Spina::Parts::MultiLine:
+        name: summary
+        content: Elevate your brand by using your own custom domain for your job board. We make it easy to set up and are here to help.
+
+prices:
+  - heading: Starter
+    subheading: For getting started
+    monthly_price: 15
+    yearly_price: 12
+    price_features:
+      - 1 Job board
+      - 250 Turbo Backfiller credits
+      - Unlimited jobs
+      - Unlimited traffic
+      - Unlimited pages
+      - Magic Aggregator
+      - Charge for job posts
+      - Built-in SEO tools
+      - Customizable job categories
+      - Payment processing via Stripe
+      - Google Jobs integration
+      - Custom domains
+      - Custom code
+      - RSS feed
+  - heading: Climber
+    subheading: For job board adventurers
+    monthly_price: 30
+    yearly_price: 25
+    price_features:
+      - 3 Job boards
+      - 1,000 Turbo Backfiller credits
+      - Unlimited jobs
+      - Unlimited traffic
+      - Unlimited pages
+      - Magic Aggregator
+      - Charge for job posts
+      - Built-in SEO tools
+      - Customizable job categories
+      - Payment processing via Stripe
+      - Google Jobs integration
+      - Custom domains
+      - Custom code
+      - RSS feed
+  - heading: Baller
+    subheading: For job board connoisseurs
+    monthly_price: 99
+    yearly_price: 83
+    price_features:
+      - Unlimited job boards
+      - 10,000 Turbo Backfiller credits
+      - Unlimited jobs
+      - Unlimited traffic
+      - Unlimited pages
+      - Magic Aggregator
+      - Charge for job posts
+      - Built-in SEO tools
+      - Customizable job categories
+      - Payment processing via Stripe
+      - Google Jobs integration
+      - Custom domains
+      - Custom code
+      - RSS feed
