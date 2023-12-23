@@ -1,0 +1,28 @@
+<div class="mx-auto max-w-7xl px-6 lg:px-8 py-20">
+  <div class="mx-auto max-w-2xl sm:text-center">
+    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"><%= content(:heading) %></h2>
+    <p class="mt-6 text-lg leading-8 text-gray-600"><%= content(:subheading) %></p>
+  </div>
+  <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none">
+    <li class="flex flex-col gap-6 xl:flex-row">
+      <%= image_tag "jason.jpg", class: "aspect-[4/5] w-52 flex-none rounded-2xl object-cover", alt: "Jason Charnes" %>
+      <div class="flex-auto">
+        <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">Jason Charnes</h3>
+        <p class="text-base leading-7 text-gray-600">Co-founder</p>
+        <p class="mt-6 text-base leading-7 text-gray-600">
+          Jason is a Ruby developer, product builder, and co-host of the Remote Ruby podcast. His passion is building simple, beautiful products that help others reach their goals. Outside of building software he enjoys family time, the drama of being a Memphis Grizzlies fan, and pretending he's in a mid-2000s emo band.
+        </p>
+      </div>
+    </li>
+    <li class="flex flex-col gap-6 xl:flex-row">
+      <%= image_tag "kyle.jpg", class: "aspect-[4/5] w-52 flex-none rounded-2xl object-cover", alt: "Kyle Davidson" %>
+      <div class="flex-auto">
+        <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">Kyle Davidson</h3>
+        <p class="text-base leading-7 text-gray-600">Co-founder</p>
+        <p class="mt-6 text-base leading-7 text-gray-600">
+          Kyle's background is digital marketing &amp; sales. He previously bootstrapped a 7-figure tour business, which he successfully exited in 2022. After selling his businesses he teamed up with Jason with a simple goal goal in mind -- Helping entrepreneurs start and scale their own online businesses with Job Boardly. When it comes to entrepreneurship, Kyle lives by one guiding principle... "The riches are in the niches."
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>

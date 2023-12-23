@@ -66,14 +66,16 @@ Spina::Theme.register do |theme|
        testimonials_heading testimonials_subheading pricing_heading pricing_subheading
        cta_heading cta_subheading]},
     {name: "show", title: "Page", parts: %w[content]},
-    {name: "feature", title: "Feature", parts: %w[icon summary screenshot content]}
+    {name: "feature", title: "Feature", parts: %w[icon summary screenshot content]},
+    {name: "about", title: "About", parts: %w[heading subheading]}
   ]
 
   # Custom pages
   # Some pages should not be created by the user, but generated automatically.
   # By naming them you can reference them in your code.
   theme.custom_pages = [
-    {name: "homepage", title: "Homepage", deletable: false, view_template: "homepage"}
+    {name: "homepage", title: "Homepage", deletable: false, view_template: "homepage"},
+    {name: "about", title: "About", deletable: false, view_template: "about"}
   ]
 
   # Navigations (optional)
