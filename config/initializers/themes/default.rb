@@ -42,6 +42,9 @@ Spina::Theme.register do |theme|
     {name: "cta_subheading", title: "CTA subheading", part_type: "Spina::Parts::MultiLine"},
     {name: "cta_button", title: "CTA button", part_type: "Spina::Parts::Line"},
     {name: "screenshot", title: "Screenshot", part_type: "Spina::Parts::Image"},
+    {name: "question", title: "Question", part_type: "Spina::Parts::Line"},
+    {name: "answer", title: "Answer", part_type: "Spina::Parts::MultiLine"},
+    {name: "faqs", title: "FAQ", parts: %w[question answer], part_type: "Spina::Parts::Repeater"},
     # Pricing-related fields
     {name: "monthly_price", title: "Monthly price", part_type: "Spina::Parts::Line"},
     {name: "yearly_price", title: "Yearly price", part_type: "Spina::Parts::Line"},
@@ -83,7 +86,7 @@ Spina::Theme.register do |theme|
   # Layout parts (optional)
   # You can create global content that doesn't belong to one specific page. We call these layout parts.
   # You only have to reference the name of the parts you want to have here.
-  theme.layout_parts = ["cta_button", "prices"]
+  theme.layout_parts = ["cta_button", "faqs", "prices"]
 
   # Resources (optional)
   # Think of resources as a collection of pages. They are managed separately in Spina
