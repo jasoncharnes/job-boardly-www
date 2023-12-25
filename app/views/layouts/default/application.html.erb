@@ -4,12 +4,20 @@
     <title><%= current_spina_account.name %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <!-- Alpine Plugins -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Core -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+    <%= current_account.content(:custom_code).html_safe %>
   </head>
   <body>
     <div class="bg-white">
-      <%= render 'default/shared/navigation' %>
+      <%= render "default/shared/banner" %>
+      <%= render "default/shared/navigation" %>
       <%= yield %>
 
       <!-- Footer -->
