@@ -1,0 +1,21 @@
+<article class="mx-auto flex max-w-xl flex-col items-center justify-between">
+  <div class="flex items-center gap-x-4 text-xs">
+    <%= tag.time post_published_at(post), class: "text-gray-500", datetime: post.content(:published_at) %>
+  </div>
+  <div class="group relative text-center">
+    <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+      <%= link_to post.materialized_path do %>
+        <span class="absolute inset-0"></span>
+        <%= post.title %>
+      <% end %>
+    </h3>
+    <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600"><%= post.content(:summary) %></p>
+  </div>
+  <div class="relative mt-8 flex items-center gap-x-4">
+    <%= image_tag "kyle.jpg", class: "h-10 w-10 rounded-full bg-gray-50" %>
+    <div class="text-sm leading-6">
+      <p class="font-semibold text-gray-900">Kyle Davidson</p>
+      <p class="text-gray-600">Co-Founder</p>
+    </div>
+  </div>
+</article>

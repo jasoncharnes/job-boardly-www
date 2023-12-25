@@ -48,6 +48,7 @@ Spina::Theme.register do |theme|
     {name: "banner_text", title: "Banner text", part_type: "Spina::Parts::Line"},
     {name: "banner_link", title: "Banner link", part_type: "Spina::Parts::Line"},
     {name: "custom_code", title: "Custom code", part_type: "Spina::Parts::MultiLine"},
+    {name: "published_at", title: "Published at", part_type: "Spina::Parts::Line", hint: "YYYY-MM-DD"},
     # Pricing-related fields
     {name: "monthly_price", title: "Monthly price", part_type: "Spina::Parts::Line"},
     {name: "yearly_price", title: "Yearly price", part_type: "Spina::Parts::Line"},
@@ -66,11 +67,12 @@ Spina::Theme.register do |theme|
     {name: "homepage",
      title: "Homepage",
      parts: %w[heading subheading social_proof_text features_heading features_subheading
-       testimonials_heading testimonials_subheading pricing_heading pricing_subheading
-       cta_heading cta_subheading]},
+       testimonials_heading testimonials_subheading pricing_heading pricing_subheading]},
     {name: "show", title: "Page", parts: %w[content]},
     {name: "feature", title: "Feature", parts: %w[icon summary screenshot content]},
-    {name: "about", title: "About", parts: %w[heading subheading]}
+    {name: "about", title: "About", parts: %w[heading subheading]},
+    {name: "post", title: "Blog post", parts: %w[published_at summary content]},
+    {name: "blog", title: "Blog list", parts: %w[heading subheading]}
   ]
 
   # Custom pages
@@ -78,7 +80,8 @@ Spina::Theme.register do |theme|
   # By naming them you can reference them in your code.
   theme.custom_pages = [
     {name: "homepage", title: "Homepage", deletable: false, view_template: "homepage"},
-    {name: "about", title: "About", deletable: false, view_template: "about"}
+    {name: "about", title: "About", deletable: false, view_template: "about"},
+    {name: "blog", title: "Blog", deletable: false, view_template: "blog"}
   ]
 
   # Navigations (optional)
@@ -91,7 +94,11 @@ Spina::Theme.register do |theme|
   # Layout parts (optional)
   # You can create global content that doesn't belong to one specific page. We call these layout parts.
   # You only have to reference the name of the parts you want to have here.
-  theme.layout_parts = ["cta_button", "banner_text", "banner_link", "custom_code", "faqs", "prices"]
+  theme.layout_parts = [
+    "cta_button", "cta_heading", "cta_subheading",
+    "banner_text", "banner_link", "custom_code",
+    "faqs", "prices"
+  ]
 
   # Resources (optional)
   # Think of resources as a collection of pages. They are managed separately in Spina

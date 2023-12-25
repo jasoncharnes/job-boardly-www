@@ -8,8 +8,21 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Spina::Resource.where(name: "features") do |resource|
-  resources.pages.destroy_all
+Spina::Resource.where(name: "posts").each do |resource|
+  resource.pages.destroy_all
+  resource.destroy!
+end
+
+Spina::Resource.find_or_create_by!(
+  name: "posts",
+  label: "Posts",
+  view_template: "post",
+  slug: "blog",
+  order_by: :created_at
+)
+
+Spina::Resource.where(name: "features").each do |resource|
+  resource.pages.destroy_all
   resource.destroy
 end
 
@@ -25,10 +38,12 @@ features.pages.destroy_all
 seeds = YAML.load_file(Rails.root.join("db", "seeds.yml"))
 
 seeds["features"].each do |feature|
+  key = Rails.env.production? ? "content" : "en_content"
+
   features.pages.create!(
-    title: feature["title"],
-    view_template: "feature",
-    content: feature["en_content"].map do |part|
+    :title => feature["title"],
+    :view_template => "feature",
+    key => feature["en_content"].map do |part|
       part[0].constantize.new(**part[1])
     end
   )
@@ -51,6 +66,39 @@ price_content = seeds["prices"].map do |price|
   Spina::Parts::RepeaterContent.new(name: "prices", parts: parts)
 end
 
-price_content = Spina::Parts::Repeater.new(name: "prices", content: price_content)
+faq_parts = Spina::Parts::RepeaterContent.new(
+  name: "faqs",
+  parts: [
+    Spina::Parts::Line.new(name: "question", content: "What is the difference between a trial and a subscription?"),
+    Spina::Parts::MultiLine.new(name: "answer", content: "A trial is a free account that you can use to try out the service. A subscription is a paid account that you can use to create and manage your own content.")
+  ]
+)
 
-Spina::Account.first.update!(en_content: price_content)
+content = [
+  Spina::Parts::Repeater.new(name: "faqs", content: faq_parts),
+  Spina::Parts::Repeater.new(name: "prices", content: price_content),
+  Spina::Parts::Line.new(name: "cta_button", content: "Start a free 7 day trial"),
+  Spina::Parts::Line.new(name: "cta_heading", content: "Ready to get started?"),
+  Spina::Parts::MultiLine.new(name: "cta_subheading", content: "Creating your job board with Job Boardly is easy and risk-free. Explore all the features and see how they work for your job board. For free.")
+]
+
+Spina::Account.first.update!(en_content: content)
+
+Spina::Page.find_by(name: "homepage").update!(en_content: [
+  Spina::Parts::Line.new(name: "heading", content: "Launch a niche job board instantly."),
+  Spina::Parts::MultiLine.new(name: "subheading", content: "Launch a fully-functional, SEO-friendly job board in minutes. Turn connecting job seekers with employers into a profitable business with our job board software."),
+  Spina::Parts::Line.new(name: "social_proof_text", content: "Trusted by 100+ job boards"),
+  Spina::Parts::Line.new(name: "features_heading", content: "Build the perfect, niche job board."),
+  Spina::Parts::MultiLine.new(name: "features_subheading", content: "Easily launch and customize your job board with our simple, easy-to-use job board software. Tailor your board to meet the needs of your niche or industry."),
+  Spina::Parts::Line.new(name: "testimonials_heading", content: "People love our job board software."),
+  Spina::Parts::MultiLine.new(name: "testimonials_subheading", content: "Don't just take our word for it. Here's what Job Boardly customers have to say about using our job board software."),
+  Spina::Parts::Line.new(name: "pricing_heading", content: "Simple pricing for everyone."),
+  Spina::Parts::MultiLine.new(name: "pricing_subheading", content: "We offer one simple plan packed with the best features for engaging your audience, creating customer loyalty, and driving sales.")
+])
+
+Spina::Page.find_by(name: "about").update!(
+  en_content: [
+    Spina::Parts::Line.new(name: "heading", content: "About Job Boardly"),
+    Spina::Parts::MultiLine.new(name: "subheading", content: "We're two people dedicated to building products that help people. That's why we build Job Boardly. We want to help you make money connecting talent with opportunities.")
+  ]
+)
