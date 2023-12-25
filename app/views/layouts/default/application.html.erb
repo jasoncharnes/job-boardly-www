@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= current_spina_account.name %></title>
+    <title><%= current_page.seo_title %></title>
+    <meta name="description" content="<%= current_page.description %>" />
+
     <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 
     <!-- Alpine Plugins -->
