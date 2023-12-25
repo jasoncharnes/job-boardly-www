@@ -72,5 +72,8 @@ end
 # A modern Ruby on Rails CMS with Hotwire [https://github.com/SpinaCMS/Spina]
 gem "spina", "~> 2.17"
 
-# View helpers for the beautiful hand-crafted SVG icons, Heroicons. [https://github.com/bharget/heroicon]
+# View helpers for the beautiful hand-crafted SVG icons, Heroicons [https://github.com/bharget/heroicon]
 gem "heroicon", "~> 1.0"
+
+# Embed SVG documents in your Rails views and style them with CSS [https://github.com/jamesmartin/inline_svg]
+gem "inline_svg", "~> 1.9"
