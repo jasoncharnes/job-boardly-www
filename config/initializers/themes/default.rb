@@ -50,7 +50,11 @@ Spina::Theme.register do |theme|
     {name: "custom_code", title: "Custom code", part_type: "Spina::Parts::MultiLine"},
     {name: "published_at", title: "Published at", part_type: "Spina::Parts::Line", hint: "YYYY-MM-DD"},
     {name: "avatar", title: "Avatar", part_type: "Spina::Parts::Image"},
+    {name: "name", title: "Name", part_type: "Spina::Parts::Line"},
+    {name: "company", title: "Company", part_type: "Spina::Parts::Line"},
+    {name: "quote", title: "Quote", part_type: "Spina::Parts::MultiLine"},
     {name: "social_proof_avatars", title: "Social proof avatars", parts: %w[avatar], part_type: "Spina::Parts::Repeater"},
+    {name: "testimonials", title: "Testimonials", parts: %w[name avatar company quote], part_type: "Spina::Parts::Repeater"},
     # Pricing-related fields
     {name: "monthly_price", title: "Monthly price", part_type: "Spina::Parts::Line"},
     {name: "yearly_price", title: "Yearly price", part_type: "Spina::Parts::Line"},
@@ -69,7 +73,7 @@ Spina::Theme.register do |theme|
     {name: "homepage",
      title: "Homepage",
      parts: %w[heading subheading social_proof_text social_proof_avatars features_heading features_subheading
-       testimonials_heading testimonials_subheading pricing_heading pricing_subheading]},
+       testimonials_heading testimonials_subheading testimonials pricing_heading pricing_subheading]},
     {name: "show", title: "Page", parts: %w[content]},
     {name: "feature", title: "Feature", parts: %w[icon summary screenshot content]},
     {name: "about", title: "About", parts: %w[heading subheading]},
