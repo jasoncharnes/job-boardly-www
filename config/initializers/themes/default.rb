@@ -49,6 +49,8 @@ Spina::Theme.register do |theme|
     {name: "banner_link", title: "Banner link", part_type: "Spina::Parts::Line"},
     {name: "custom_code", title: "Custom code", part_type: "Spina::Parts::MultiLine"},
     {name: "published_at", title: "Published at", part_type: "Spina::Parts::Line", hint: "YYYY-MM-DD"},
+    {name: "avatar", title: "Avatar", part_type: "Spina::Parts::Image"},
+    {name: "social_proof_avatars", title: "Social proof avatars", parts: %w[avatar], part_type: "Spina::Parts::Repeater"},
     # Pricing-related fields
     {name: "monthly_price", title: "Monthly price", part_type: "Spina::Parts::Line"},
     {name: "yearly_price", title: "Yearly price", part_type: "Spina::Parts::Line"},
@@ -66,7 +68,7 @@ Spina::Theme.register do |theme|
   theme.view_templates = [
     {name: "homepage",
      title: "Homepage",
-     parts: %w[heading subheading social_proof_text features_heading features_subheading
+     parts: %w[heading subheading social_proof_text social_proof_avatars features_heading features_subheading
        testimonials_heading testimonials_subheading pricing_heading pricing_subheading]},
     {name: "show", title: "Page", parts: %w[content]},
     {name: "feature", title: "Feature", parts: %w[icon summary screenshot content]},
