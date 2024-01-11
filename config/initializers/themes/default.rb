@@ -56,12 +56,13 @@ Spina::Theme.register do |theme|
     {name: "social_proof_avatars", title: "Social proof avatars", parts: %w[avatar], part_type: "Spina::Parts::Repeater"},
     {name: "testimonials", title: "Testimonials", parts: %w[name avatar company quote], part_type: "Spina::Parts::Repeater"},
     # Pricing-related fields
+    {name: "plan", title: "Plan ID", part_type: "Spina::Parts::Line"},
     {name: "monthly_price", title: "Monthly price", part_type: "Spina::Parts::Line"},
     {name: "yearly_price", title: "Yearly price", part_type: "Spina::Parts::Line"},
     {name: "price_features", title: "Price features", parts: %w[text], part_type: "Spina::Parts::Repeater"},
     {name: "prices",
      title: "Prices",
-     parts: %w[heading subheading monthly_price yearly_price price_features],
+     parts: %w[heading subheading monthly_price yearly_price plan price_features],
      part_type: "Spina::Parts::Repeater"}
   ]
 
