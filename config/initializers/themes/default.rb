@@ -79,7 +79,8 @@ Spina::Theme.register do |theme|
     {name: "feature", title: "Feature", parts: %w[icon summary screenshot content]},
     {name: "about", title: "About", parts: %w[heading subheading]},
     {name: "post", title: "Blog post", parts: %w[published_at summary content]},
-    {name: "blog", title: "Blog list", parts: %w[heading subheading]}
+    {name: "blog", title: "Blog list", parts: %w[heading subheading]},
+    {name: "support_article", title: "Support article", parts: %w[content]}
   ]
 
   # Custom pages
