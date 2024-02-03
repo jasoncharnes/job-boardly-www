@@ -6,7 +6,17 @@
       <%= image_tag "kyle.jpg", class: "h-10 w-10 rounded-full bg-gray-50" %>
       <p class="leading-5 font-semibold text-gray-900">Kyle Davidson</p>
     </div>
-    <div class="prose mt-8 max-w-none"><%= content.html(:content) %></div>
+    <div
+      class="prose mt-8 max-w-none"
+      x-data="{
+        init() {
+          $el.querySelectorAll('a').forEach((link) => {
+            if (link.host !== window.location.host) link.target = '_blank'
+          })
+        }
+      }">
+      <%= content.html(:content) %>
+    </div>
   </div>
 </div>
 
