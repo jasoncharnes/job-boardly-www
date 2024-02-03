@@ -1,3 +1,17 @@
+<% content_for :structured_data do %>
+  {
+    "@context": "https://schema.org/",
+    "@type": "BlogPosting",
+    "author": {
+      "@type": "Person",
+      "name": "Kyle Davidson",
+      "jobTitle": "Co-founder",
+    },
+    "dateModified": "<%= current_page.updated_at.strftime("%Y-%m-%d") %>",
+    "headline": "<%= current_page.title %>",
+  }
+<% end %>
+
 <div class="bg-white px-6 pt-20 lg:px-8 text-left">
   <div class="mx-auto max-w-4xl text-base leading-7 text-gray-700">
     <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"><%= current_page.title %></h1>

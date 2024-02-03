@@ -5,6 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<%= current_page.description %>" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Organization",
+        "name": "Job Boardly",
+        "legalName": "Sourced Partner, LLC.",
+        "description": "Job board software",
+        "logo": "<%= asset_url "logo.png" %>",
+        "url": "https://www.jobboardly.com",
+        "email": "hello@jobboardly.com"
+      }
+    </script>
+    <% if content_for?(:structured_data) %>
+    <script type="application/ld+json">
+      <%= yield :structured_data %>
+    </script>
+    <% end %>
+
     <%= csrf_meta_tags %>
 
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
