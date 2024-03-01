@@ -43,6 +43,14 @@
     <% end %>
     <script>(function(w,r){w._rg=r;if(typeof w[r]==='undefined'){w[r]=function(){w[r].q.push(Array.prototype.slice.call(arguments));w.localStorage.setItem(r,JSON.stringify(w[r].q));};w[r].q=JSON.parse(w.localStorage.getItem(r)||'[]');;w[r]('scriptLoad',{title:document.title,referrer_url:document.referrer,url:w.location.href,timestamp:new Date().getTime()})}})(window,'revgems')</script>
     <script src="//rvgms.io/?api-key=en20o3dk4sfn" async></script>
+    <script>
+      document.addEventListener("turbo:visit", (event) => {
+        revgems("pageView", {
+          url: event.detail.url,
+          referrer: document.location.href
+        })
+      })
+    </script>
   </head>
   <body>
     <div class="bg-white">
